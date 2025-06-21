@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>婚礼桌号查询</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 80%;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>欢迎参加我们的婚礼 🎊</h1>
+    <p>请输入您的姓名，查看桌号安排：</p>
+    <input type="text" id="nameInput" placeholder="请输入姓名" />
+    <br/>
+    <button onclick="searchTable()">查询桌号</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    const guestList = {
+      "张三": "第1桌",
+      "李四": "第2桌",
+      "王五": "第3桌",
+      "赵六": "第4桌"
+    };
+
+    function searchTable() {
+      const name = document.getElementById('nameInput').value.trim();
+      const resultDiv = document.getElementById('result');
+      if (!name) {
+        resultDiv.textContent = "请输入姓名。";
+        return;
+      }
+      if (guestList[name]) {
+        resultDiv.textContent = `🎉 欢迎 ${name}，您被安排在【${guestList[name]}】。`;
+      } else {
+        resultDiv.textContent = "未找到您的名字，请确认是否输入正确。";
+      }
+    }
+  </script>
+</body>
+</html>
