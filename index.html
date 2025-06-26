@@ -25,13 +25,23 @@
       border-radius: 1rem;
       margin-bottom: 1.5rem;
     }
-    h1 {
-      color: #e75480;
-      font-size: clamp(18px, 5vw, 28px); /* 自动根据屏幕宽度适配字体大小 */
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      word-break: break-word; /* 防止微信强制一整段挤一行 */
-    }
+   h1.title {
+  color: #e75480;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h1.title .line {
+  font-weight: 500;
+}
+
+h1.title .names {
+  font-weight: bold;
+  font-size: clamp(24px, 6vw, 32px);
+  margin: 0.3rem 0;
+  color: #c71585;
+}
     p {
       font-size: 1rem;
       margin-bottom: 1rem;
@@ -76,7 +86,12 @@
   <div class="container">
     <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" />
 
-    <h1>欢迎参加 黄学谦 💍 柯平易 的婚礼</h1>
+   <h1 class="title">
+  <div class="line">欢迎参加</div>
+  <div class="names">黄学谦 💍 柯平易</div>
+  <div class="line">的婚礼</div>
+   </h1>
+
 
     <p>请输入您的姓名，查看您的桌号：</p>
     <input type="text" id="nameInput" placeholder="请输入姓名" />
