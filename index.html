@@ -27,6 +27,10 @@
     }
     h1 {
       color: #e75480;
+      font-size: 5.2vw; /* 根据屏幕宽度自动缩放 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     input {
       width: 80%;
@@ -55,18 +59,29 @@
       font-weight: bold;
       color: #d2691e;
     }
+    .footer-thanks {
+      margin-top: 2rem;
+      font-size: 4.5vw;
+      color: #b8860b; /* 柔和金色 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" style="width: 100%; border-radius: 1rem; margin-top: 1rem;" />
+    <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" />
+    
     <h1>欢迎参加 黄学谦 💍 柯平易 的婚礼</h1>
+    
     <p>请输入您的姓名，查看您的桌号：</p>
     <input type="text" id="nameInput" placeholder="请输入姓名" />
     <br/>
     <button onclick="searchTable()">查询桌号</button>
     <div class="result" id="result"></div>
-    <div >感谢您的光临，愿我们一同见证幸福时刻 ✨</div>
+
+    <div class="footer-thanks">感谢您的光临，愿我们一同见证幸福时刻 ✨</div>
   </div>
 
   <script>
