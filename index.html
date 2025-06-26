@@ -4,122 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>婚礼桌号查询 | 黄学谦 ❤️ 柯平易</title>
-  <link href="https://fonts.font.im/css?family=ZCOOL+XiaoWei" rel="stylesheet">
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #fff5f5, #ffecec);
-      font-family: 'ZCOOL XiaoWei', serif;
-      color: #5c2c06;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fff0f5;
       text-align: center;
-      overflow-x: hidden;
+      padding: 2rem;
+      color: #333;
     }
-
     .container {
-      max-width: 680px;
-      margin: 2rem auto;
+      max-width: 600px;
+      margin: auto;
       background: white;
-      padding: 2.5rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      position: relative;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(255,105,180,0.3);
     }
-
-    h1 {
-      color: #b22222;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-
     img {
       width: 100%;
       border-radius: 1rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
+    h1 {
+      color: #e75480;
     }
-
     input {
       width: 80%;
-      padding: 0.7rem;
+      padding: 0.6rem;
       font-size: 1rem;
-      border: 1px solid #ddd;
       border-radius: 0.5rem;
-      margin-top: 0.5rem;
-      outline: none;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
-    }
-
-    button {
-      padding: 0.6rem 1.4rem;
+      border: 1px solid #ccc;
       margin-top: 1rem;
-      background-color: #b22222;
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      margin-top: 1rem;
+      background-color: #e75480;
       border: none;
       color: white;
       font-size: 1rem;
-      font-weight: bold;
       cursor: pointer;
-      border-radius: 2rem;
-      box-shadow: 0 4px 10px rgba(178,34,34,0.3);
-      transition: background-color 0.3s ease;
+      border-radius: 0.5rem;
     }
-
     button:hover {
-      background-color: #a01515;
+      background-color: #d8436f;
     }
-
     .result {
-      margin-top: 1.8rem;
+      margin-top: 1.5rem;
       font-size: 1.2rem;
-      color: #8b0000;
       font-weight: bold;
-    }
-
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      color: #aaa;
-    }
-
-    /* 飘落花瓣动画 */
-    .petal {
-      position: fixed;
-      top: -50px;
-      width: 20px;
-      height: 20px;
-      background: url('https://static.thenounproject.com/png/3618509-200.png') no-repeat center;
-      background-size: contain;
-      animation: fall 12s linear infinite;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-      }
+      color: #d2691e;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照">
-    <h1>欢迎参加 💍 黄学谦 ❤️ 柯平易 的婚礼</h1>
-    <p>亲爱的来宾，请输入您的姓名，查看您的桌号：</p>
-
-    <input type="text" id="nameInput" placeholder="请输入您的姓名"/>
-    <br>
+    <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" style="width: 100%; border-radius: 1rem; margin-top: 1rem;" />
+    <h1>欢迎参加 黄学谦 💍 柯平易 的婚礼</h1>
+    <p>请输入您的姓名，查看您的桌号：</p>
+    <input type="text" id="nameInput" placeholder="请输入姓名" />
+    <br/>
     <button onclick="searchTable()">查询桌号</button>
     <div class="result" id="result"></div>
-    <div class="footer">感谢您的光临，愿我们一同见证幸福时刻 ✨</div>
+    <div >感谢您的光临，愿我们一同见证幸福时刻 ✨</div>
   </div>
 
   <script>
@@ -134,24 +81,14 @@
       const name = document.getElementById('nameInput').value.trim();
       const resultDiv = document.getElementById('result');
       if (!name) {
-        resultDiv.textContent = "请输入姓名哦～";
+        resultDiv.textContent = "请输入姓名。";
         return;
       }
       if (guestList[name]) {
-        resultDiv.textContent = `🎉 欢迎 ${name}，您被安排在「${guestList[name]}」~`;
+        resultDiv.textContent = `🎉 欢迎 ${name}，您被安排在【${guestList[name]}】。`;
       } else {
-        resultDiv.textContent = "未找到您的名字，请确认输入是否正确~";
+        resultDiv.textContent = "未找到您的名字，请确认输入是否正确。";
       }
-    }
-
-    // 🌸 创建飘落的花瓣
-    for (let i = 0; i < 15; i++) {
-      const petal = document.createElement("div");
-      petal.className = "petal";
-      petal.style.left = `${Math.random() * 100}vw`;
-      petal.style.animationDelay = `${Math.random() * 10}s`;
-      petal.style.transform = `rotate(${Math.random() * 360}deg)`;
-      document.body.appendChild(petal);
     }
   </script>
 </body>
