@@ -27,10 +27,10 @@
     }
     h1 {
       color: #e75480;
-      font-size: 6vw;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      font-size: clamp(18px, 5vw, 28px); /* 自动根据屏幕宽度适配字体大小 */
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      word-break: break-word; /* 防止微信强制一整段挤一行 */
     }
     p {
       font-size: 1rem;
@@ -65,20 +65,10 @@
     }
     .footer-thanks {
       margin-top: 2rem;
-      font-size: 4.8vw;
+      font-size: clamp(16px, 4.5vw, 24px);
       color: #b8860b;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    @media (min-width: 500px) {
-      h1 {
-        font-size: 32px;
-      }
-      .footer-thanks {
-        font-size: 20px;
-      }
+      line-height: 1.4;
+      word-break: break-word;
     }
   </style>
 </head>
