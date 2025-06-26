@@ -5,93 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>婚礼桌号查询 | 黄学谦 ❤️ 柯平易</title>
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: "Segoe UI", sans-serif;
       background-color: #fff0f5;
       text-align: center;
-      padding: 2rem;
       color: #333;
     }
     .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(255,105,180,0.3);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 100%;
+      padding: 1rem 1rem 0.5rem;
+      box-sizing: border-box;
     }
     img {
       width: 100%;
-      border-radius: 1rem;
-      margin-bottom: 1.5rem;
+      max-height: 28vh;
+      object-fit: cover;
+      border-radius: 0.8rem;
     }
-
     h1.title {
       color: #e75480;
-      font-size: clamp(20px, 5vw, 28px);
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
-    .title .names {
+      font-size: 1.2rem;
       font-weight: bold;
-      font-size: clamp(24px, 6vw, 32px);
-      margin: 0.3rem 0;
-      color: #e75480;
+      margin: 0.5rem 0 0.3rem;
     }
-    .title .welcome-line {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 0 0.5rem;
+    .welcome-line {
+      font-size: 0.9rem;
       color: #e75480;
+      margin-bottom: 0.3rem;
     }
-
     p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      font-size: 0.85rem;
+      margin: 0.2rem 0;
     }
-
     input {
-      width: 80%;
-      padding: 0.6rem;
-      font-size: 1rem;
-      border-radius: 0.5rem;
+      width: 90%;
+      padding: 0.4rem;
+      font-size: 0.85rem;
+      border-radius: 0.4rem;
       border: 1px solid #ccc;
-      margin-top: 1rem;
+      margin-top: 0.4rem;
     }
-
     button {
-      padding: 0.6rem 1.2rem;
-      margin-top: 1rem;
+      padding: 0.4rem 1rem;
+      margin-top: 0.5rem;
       background-color: #e75480;
       border: none;
       color: white;
-      font-size: 1rem;
+      font-size: 0.85rem;
       cursor: pointer;
-      border-radius: 0.5rem;
+      border-radius: 0.4rem;
     }
-
     button:hover {
       background-color: #d8436f;
     }
-
     .result {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
+      font-size: 0.95rem;
       font-weight: bold;
       color: #d2691e;
+      margin-top: 0.5rem;
+      min-height: 1.5rem;
     }
-
-    .footer-thanks-wrap {
-      margin-top: 2rem;
-      line-height: 1.4;
-    }
-
     .footer-thanks {
-      font-size: clamp(16px, 4.5vw, 24px);
+      font-size: 0.85rem;
       color: #b8860b;
-      margin: 0.3rem 0;
+      line-height: 1.2;
+      margin-top: 0.4rem;
     }
   </style>
 </head>
@@ -99,21 +85,17 @@
   <div class="container">
     <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" />
 
-   <h1 class="title">
-  <div class="names">黄学谦 💍 柯平易</div>
-  <div class="welcome-line" style="justify-content: center; font-weight: 500;">
-    欢迎参加我们的婚礼 🎊
-  </div>
-</h1>
+    <div>
+      <h1 class="title">黄学谦 💍 柯平易</h1>
+      <p class="welcome-line">欢迎参加我们的婚礼</p>
+      <p>请输入您的姓名，查看您的桌号：</p>
+      <input type="text" id="nameInput" placeholder="请输入姓名" />
+      <br />
+      <button onclick="searchTable()">查询桌号</button>
+      <div class="result" id="result"></div>
+    </div>
 
-
-    <p>请输入您的姓名，查看您的桌号：</p>
-    <input type="text" id="nameInput" placeholder="请输入姓名" />
-    <br/>
-    <button onclick="searchTable()">查询桌号</button>
-    <div class="result" id="result"></div>
-
-    <div class="footer-thanks-wrap">
+    <div>
       <div class="footer-thanks">感谢您的光临</div>
       <div class="footer-thanks">愿我们一同见证幸福时刻 ✨</div>
     </div>
