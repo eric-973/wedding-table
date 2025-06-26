@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -7,45 +6,65 @@
   <title>婚礼桌号查询</title>
   <style>
     body {
-      font-family: "Helvetica Neue", sans-serif;
+      font-family: "Segoe UI", sans-serif;
       background-color: #fff0f5;
       text-align: center;
       padding: 2rem;
+      color: #333;
     }
     .container {
-      max-width: 500px;
+      max-width: 600px;
       margin: auto;
       background: white;
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(255,105,180,0.3);
+    }
+    img {
+      width: 100%;
+      border-radius: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    h1 {
+      color: #e75480;
     }
     input {
       width: 80%;
-      padding: 0.5rem;
+      padding: 0.6rem;
       font-size: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
     }
     button {
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       margin-top: 1rem;
-      background-color: #ff69b4;
+      background-color: #e75480;
       border: none;
       color: white;
       font-size: 1rem;
       cursor: pointer;
       border-radius: 0.5rem;
     }
+    button:hover {
+      background-color: #d8436f;
+    }
     .result {
       margin-top: 1.5rem;
       font-size: 1.2rem;
       font-weight: bold;
+      color: #d2691e;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>欢迎参加我们的婚礼 🎊</h1>
-    <p>请输入您的姓名，查看桌号安排：</p>
+    <!-- 📷 请将照片命名为 couple.jpg 并放在 GitHub 仓库根目录 -->
+    <img src="couple.jpg" alt="新郎新娘合照" />
+    
+    <h1>欢迎参加 黄学谦 💍 柯平易 的婚礼</h1>
+    <p>请输入您的姓名，查看您的桌号：</p>
+    
     <input type="text" id="nameInput" placeholder="请输入姓名" />
     <br/>
     <button onclick="searchTable()">查询桌号</button>
@@ -54,30 +73,10 @@
 
   <script>
     const guestList = {
-    "郑樟娣": "第1桌",
-    "舅妈": "第1桌",
-    "李国民": "第1桌",
-    "万国钧": "第1桌",
-    "姚樟根": "第1桌",
-
-    "林月华": "第2桌",
-    "徐文标": "第2桌",
-    "谢海云": "第2桌",
-    "万胜强": "第2桌",
-    "杨建军": "第2桌",
-
-    "勾波": "第3桌",
-    "林霖": "第3桌",
-    "李剑幸": "第3桌",
-    "王翔": "第3桌",
-    "傅晓燕": "第3桌",
-
-    "江文美": "第4桌",
-    "郑晓琴": "第4桌",
-    "翁永珍": "第4桌",
-    "郑志鸿": "第4桌",
-    "徐奇杰": "第4桌",
-    "李峰": "第4桌"
+      "郑樟娣": "第1桌", "舅妈": "第1桌", "李国民": "第1桌", "万国钧": "第1桌", "姚樟根": "第1桌",
+      "林月华": "第2桌", "徐文标": "第2桌", "谢海云": "第2桌", "万胜强": "第2桌", "杨建军": "第2桌",
+      "勾波": "第3桌", "林霖": "第3桌", "李剑幸": "第3桌", "王翔": "第3桌", "傅晓燕": "第3桌",
+      "江文美": "第4桌", "郑晓琴": "第4桌", "翁永珍": "第4桌", "郑志鸿": "第4桌", "徐奇杰": "第4桌", "李峰": "第4桌"
     };
 
     function searchTable() {
@@ -90,7 +89,7 @@
       if (guestList[name]) {
         resultDiv.textContent = `🎉 欢迎 ${name}，您被安排在【${guestList[name]}】。`;
       } else {
-        resultDiv.textContent = "未找到您的名字，请确认是否输入正确。";
+        resultDiv.textContent = "未找到您的名字，请确认输入是否正确。";
       }
     }
   </script>
