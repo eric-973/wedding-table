@@ -25,27 +25,33 @@
       border-radius: 1rem;
       margin-bottom: 1.5rem;
     }
-   h1.title {
-  color: #e75480;
-  font-size: clamp(20px, 5vw, 28px);
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
 
-h1.title .line {
-  font-weight: bold;
-}
+    h1.title {
+      color: #e75480;
+      font-size: clamp(20px, 5vw, 28px);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    .title .names {
+      font-weight: bold;
+      font-size: clamp(24px, 6vw, 32px);
+      margin: 0.3rem 0;
+      color: #e75480;
+    }
+    .title .welcome-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0 0.5rem;
+      color: #e75480;
+    }
 
-h1.title .names {
-  font-weight: bold;
-  font-size: clamp(24px, 6vw, 32px);
-  margin: 0.3rem 0;
-  color: #e75480;
-}
     p {
       font-size: 1rem;
       margin-bottom: 1rem;
     }
+
     input {
       width: 80%;
       padding: 0.6rem;
@@ -54,6 +60,7 @@ h1.title .names {
       border: 1px solid #ccc;
       margin-top: 1rem;
     }
+
     button {
       padding: 0.6rem 1.2rem;
       margin-top: 1rem;
@@ -64,38 +71,27 @@ h1.title .names {
       cursor: pointer;
       border-radius: 0.5rem;
     }
+
     button:hover {
       background-color: #d8436f;
     }
+
     .result {
       margin-top: 1.5rem;
       font-size: 1.2rem;
       font-weight: bold;
       color: #d2691e;
     }
-    .footer-thanks {
+
+    .footer-thanks-wrap {
       margin-top: 2rem;
+      line-height: 1.4;
+    }
+
+    .footer-thanks {
       font-size: clamp(16px, 4.5vw, 24px);
       color: #b8860b;
-      line-height: 1.4;
-      word-break: break-word;
-      .title {
-  margin-bottom: 1rem;
-  color: #e75480;
-}
-
-.title .names {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-.title .welcome-line {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 0 0.5rem;
+      margin: 0.3rem 0;
     }
   </style>
 </head>
@@ -103,15 +99,13 @@ h1.title .names {
   <div class="container">
     <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" />
 
-  <h1 class="title">
-  <div class="names">黄学谦 💍 柯平易</div>
-  <div class="welcome-line">
-    <span class="left">欢迎参加</span>
-    <span class="right">的婚礼</span>
-  </div>
-</h1>
-
-
+    <h1 class="title">
+      <div class="names">黄学谦 💍 柯平易</div>
+      <div class="welcome-line">
+        <span>欢迎参加</span>
+        <span>的婚礼</span>
+      </div>
+    </h1>
 
     <p>请输入您的姓名，查看您的桌号：</p>
     <input type="text" id="nameInput" placeholder="请输入姓名" />
@@ -119,8 +113,10 @@ h1.title .names {
     <button onclick="searchTable()">查询桌号</button>
     <div class="result" id="result"></div>
 
-    <div class="footer-thanks">感谢您的光临</div>
-    <div class="footer-thanks">愿我们一同见证幸福时刻 ✨</div>
+    <div class="footer-thanks-wrap">
+      <div class="footer-thanks">感谢您的光临</div>
+      <div class="footer-thanks">愿我们一同见证幸福时刻 ✨</div>
+    </div>
   </div>
 
   <script>
