@@ -27,10 +27,14 @@
     }
     h1 {
       color: #e75480;
-      font-size: 5.2vw; /* 根据屏幕宽度自动缩放 */
+      font-size: 6vw;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
     }
     input {
       width: 80%;
@@ -61,20 +65,29 @@
     }
     .footer-thanks {
       margin-top: 2rem;
-      font-size: 4.5vw;
-      color: #b8860b; /* 柔和金色 */
+      font-size: 4.8vw;
+      color: #b8860b;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    @media (min-width: 500px) {
+      h1 {
+        font-size: 32px;
+      }
+      .footer-thanks {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <img src="https://cloud1-0gqgcfmn4cc6a584-1365138146.tcloudbaseapp.com/resources/2025-06/lowcode-2333268" alt="新郎新娘合照" />
-    
+
     <h1>欢迎参加 黄学谦 💍 柯平易 的婚礼</h1>
-    
+
     <p>请输入您的姓名，查看您的桌号：</p>
     <input type="text" id="nameInput" placeholder="请输入姓名" />
     <br/>
